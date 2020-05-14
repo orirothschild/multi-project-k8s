@@ -20,7 +20,7 @@ before_install:
   #like react files to run a react app etc
 
 script:
-  - docker run -e CI=true orirothschild/multi-container-react-test npm test 
+  - docker run -e CI=true orirothschild/react-test npm test 
 
 deploy:
   provider: script
