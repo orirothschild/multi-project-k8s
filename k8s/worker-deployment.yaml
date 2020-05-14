@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client-worker
-spec: 
-  replicas: 1 
+  name: worker-deployment
+spec:
+  replicas: 1
   selector:
     matchLabels:
       component: worker
@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: worker
-          image: orirothschild/multi-worker
-          env: 
+          image: stephengrider/multi-worker
+          env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
             - name: REDIS_PORT
