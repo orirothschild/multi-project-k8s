@@ -4,9 +4,9 @@ metadata:
   name: redis-cluster-ip-service
 spec:
   type: ClusterIP
-  #with the selector the service knows how to track the deployment it refernces its specs into 
   selector:
     component: redis
   ports:
     - port: 6379
       targetPort: 6379
+  #with the selector the service knows how to track the deployment it refernces its specs into 

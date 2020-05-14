@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: server-deployment
-spec:
-  replicas: 3
+spec: 
+  replicas: 3 
   selector:
     matchLabels:
       component: server
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: stephengrider/multi-server
+          image: orirothschild/multi-server
           ports:
             - containerPort: 5000
           env:
@@ -30,7 +30,7 @@ spec:
               value: '5432'
             - name: PGDATABASE
               value: postgres
-            - name: PGPASSWORD
+            - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: pgpassword
